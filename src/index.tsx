@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./styles/index.css";
 import { store } from "./app/store";
 import { AppRouter } from "./app/routes/router";
+import { SnackbarProvider } from "notistack";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -12,7 +13,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <AppRouter />
+      <SnackbarProvider maxSnack={3} autoHideDuration={2000}>
+        <AppRouter />
+      </SnackbarProvider>
     </Provider>
   </React.StrictMode>
 );

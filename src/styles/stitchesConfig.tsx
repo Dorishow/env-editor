@@ -1,18 +1,16 @@
 import { createStitches } from "@stitches/react";
 
+export const colors = {
+  primary: "#1A73E8",
+  gray1: "#FFFFFF",
+  gray2: "#E7EAF0",
+  gray3: "#CCD2DE",
+  gray4: "#6B6F74",
+};
+
 export const { styled, css } = createStitches({
   theme: {
-    colors: {
-      cardButtonBg: "#1F3540",
-      cardButtonShadow: "#112029",
-      genericButtonBg: "#A8BEC9",
-      genericButtonShadow: "#718C99",
-      x_color: "#31C4BE",
-      o_color: "#F2B237",
-      dark_text: "#172B35",
-      light_text: "#A8BEC9",
-      board_bg: "#192A32",
-    },
+    colors,
     space: {
       0: "0px",
       1: "8px",
@@ -44,18 +42,34 @@ export const { styled, css } = createStitches({
       mono: "Söhne Mono, menlo, monospace",
     },
     radii: {
+      radii1: "20px",
       card: "25px",
     },
     shadows: {
-      0: "0px 8px ",
+      drop_shadow: "drop-shadow(0px 4px 100px rgb(231, 234, 240))",
     },
     fontWeights: {},
     lineHeights: {},
     letterSpacings: {},
     sizes: {},
     borderWidths: {},
-    borderStyles: {},
+    borderStyles: {
+      dashedBorder: "1px solid $primary",
+    },
     zIndices: {},
     transitions: {},
+  },
+  media: {
+    bp1: "(min-width: 480px)",
+    bp2: "(min-width: 640px)",
+    bp3: "(min-width: 768px)",
+    bp4: "(min-width: 1024px)",
+  },
+  utils: {
+    mx: (value: string) => ({ marginLeft: value, marginRight: value }),
+    my: (value: string) => ({ marginTop: value, marginBottom: value }),
+    px: (value: string) => ({ paddingLeft: value, paddingRight: value }),
+    py: (value: string) => ({ paddingTop: value, paddingBottom: value }),
+    bg: (value: string) => ({ backgroundColor: value }),
   },
 });

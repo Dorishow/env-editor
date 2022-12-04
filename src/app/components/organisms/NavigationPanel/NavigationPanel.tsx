@@ -1,9 +1,9 @@
-import LabPanel from "../LabPanel/LabPanel";
+import EnvEditorPanel from "../EnvEditorPanel";
 
 const NavigationPanel = () => {
   return (
     <div>
-      <LabPanel />
+      <EnvEditorPanel />
     </div>
   );
 };
